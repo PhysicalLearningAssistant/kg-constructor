@@ -1,0 +1,660 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "电磁学课程知识图谱文件格式 v1.0.0",
+  "description": "对应《电磁学课程知识图谱文件格式规范 v1.0》。本 Schema 只约束文件结构、字段类型与取值域；跨集合引用、ID 唯一性、章节层级无环、先修关系无环及传递归约、审核状态时效等一致性要求由 validate_graph.py 校验。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "graph_id",
+    "version",
+    "status",
+    "created_at",
+    "course",
+    "chapters",
+    "sources",
+    "evidence",
+    "nodes",
+    "edges",
+    "item_mappings",
+    "redirects",
+    "extensions"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "文件格式版本，本版固定为 1.0.0。",
+      "const": "1.0.0"
+    },
+    "graph_id": {
+      "description": "图谱系列 ID。",
+      "$ref": "#/$defs/id"
+    },
+    "version": {
+      "description": "图谱数据版本，三段非负整数，不带前导零。",
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+    },
+    "status": {
+      "description": "draft 表示未定稿数据，released 表示最终定稿数据。",
+      "enum": ["draft", "released"]
+    },
+    "created_at": {
+      "description": "此数据文件的导出时间。",
+      "$ref": "#/$defs/timestamp"
+    },
+    "course": {
+      "$ref": "#/$defs/course"
+    },
+    "chapters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/chapter"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/edge"
+      }
+    },
+    "item_mappings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item_mapping"
+      }
+    },
+    "redirects": {
+      "description": "旧节点 ID 到现存节点 ID 的映射；无映射时为空对象。",
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/$defs/id"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/id"
+      }
+    },
+    "extensions": {
+      "$ref": "#/$defs/extensions"
+    }
+  },
+  "$defs": {
+    "id": {
+      "description": "图谱、课程、章节、节点、关系、来源、证据、题目的 ID。",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+    },
+    "timestamp": {
+      "description": "UTC RFC 3339 时间；必须带 Z 或 +00:00 时区标识。",
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]{1,9})?(Z|\\+00:00)$"
+    },
+    "base_uri": {
+      "description": "HTTPS 地址或 asset:// 资料标识。",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048,
+      "pattern": "^(https|asset)://[^\\s]+$"
+    },
+    "extensions": {
+      "description": "格式外的附加信息；键必须采用命名空间形式，如 team.difficulty。",
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[^\\s.]+(\\.[^\\s.]+)+$"
+      }
+    },
+    "review": {
+      "description": "审核状态元数据。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reviewer_id", "reviewed_at", "note"],
+      "properties": {
+        "status": {
+          "enum": ["pending", "approved", "rejected"]
+        },
+        "reviewer_id": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "reviewed_at": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "note": {
+          "type": ["string", "null"],
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "pending"
+              }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "reviewer_id": {
+                "type": "null"
+              },
+              "reviewed_at": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": ["approved", "rejected"]
+              }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "required": ["reviewer_id", "reviewed_at"],
+            "properties": {
+              "reviewer_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reviewed_at": {
+                "$ref": "#/$defs/timestamp"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "rejected"
+              }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "required": ["note"],
+            "properties": {
+              "note": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "course": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "language"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "language": {
+          "enum": ["zh-CN", "en"]
+        }
+      }
+    },
+    "chapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "parent_id", "order"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "parent_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "edition", "source_type", "uri", "sha256"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "edition": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "source_type": {
+          "enum": ["pdf", "docx", "markdown", "web"]
+        },
+        "uri": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/base_uri"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sha256": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "source_type": {
+                "enum": ["pdf", "docx", "markdown"]
+              }
+            },
+            "required": ["source_type"]
+          },
+          "then": {
+            "required": ["sha256"],
+            "properties": {
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_type": {
+                "const": "web"
+              }
+            },
+            "required": ["source_type"]
+          },
+          "then": {
+            "required": ["uri"],
+            "properties": {
+              "uri": {
+                "type": "string",
+                "pattern": "^https://[^\\s]+$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "locator": {
+      "description": "来源定位；section、页码范围、anchor 至少存在一种有效定位。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["section", "page_start", "page_end", "anchor"],
+      "properties": {
+        "section": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "page_start": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+        "page_end": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+        "anchor": {
+          "type": ["string", "null"],
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["page_start"],
+            "properties": {
+              "page_start": {
+                "type": "integer"
+              }
+            }
+          },
+          "then": {
+            "required": ["page_end"],
+            "properties": {
+              "page_end": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["page_end"],
+            "properties": {
+              "page_end": {
+                "type": "integer"
+              }
+            }
+          },
+          "then": {
+            "required": ["page_start"],
+            "properties": {
+              "page_start": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      ],
+      "anyOf": [
+        {
+          "required": ["section"],
+          "properties": {
+            "section": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "required": ["anchor"],
+          "properties": {
+            "anchor": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "required": ["page_start"],
+          "properties": {
+            "page_start": {
+              "type": "integer"
+            }
+          }
+        }
+      ]
+    },
+    "rag_ref": {
+      "description": "外部 RAG 关联；未关联时为 null。规范只约定其结构与外部标识的用法，不约定 RAG 侧实现。",
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["file_id", "parent_id"],
+      "properties": {
+        "file_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parent_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "source_id", "locator", "quote", "rag_ref"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_id": {
+          "$ref": "#/$defs/id"
+        },
+        "locator": {
+          "$ref": "#/$defs/locator"
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000
+        },
+        "rag_ref": {
+          "$ref": "#/$defs/rag_ref"
+        }
+      }
+    },
+    "evidence_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/id"
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "type",
+        "description",
+        "chapter",
+        "aliases",
+        "formula_latex",
+        "conditions",
+        "evidence_ids",
+        "review",
+        "extensions"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "type": {
+          "enum": ["concept", "law", "formula", "method", "application", "phenomenon"]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8000
+        },
+        "chapter": {
+          "$ref": "#/$defs/id"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "formula_latex": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidence_ids"
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "formula"
+              }
+            },
+            "required": ["type"]
+          },
+          "then": {
+            "required": ["formula_latex"],
+            "properties": {
+              "formula_latex": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "formula_latex": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source",
+        "target",
+        "relation",
+        "description",
+        "evidence_ids",
+        "review",
+        "extensions"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "source": {
+          "$ref": "#/$defs/id"
+        },
+        "target": {
+          "$ref": "#/$defs/id"
+        },
+        "relation": {
+          "enum": ["prerequisite", "derives", "related_to"]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidence_ids"
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
+        }
+      }
+    },
+    "item_mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item_id", "skill_ids", "confidence", "evidence_ids", "review", "extensions"],
+      "properties": {
+        "item_id": {
+          "$ref": "#/$defs/id"
+        },
+        "skill_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "confidence": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidence_ids"
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
+        }
+      }
+    }
+  }
+}

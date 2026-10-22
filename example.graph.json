@@ -1,0 +1,631 @@
+{
+  "schema_version": "1.0.0",
+  "graph_id": "electromagnetism_university",
+  "version": "0.9.0",
+  "status": "draft",
+  "created_at": "2026-10-16T08:00:00Z",
+  "course": {
+    "id": "university_electromagnetism",
+    "name": "大学电磁学",
+    "language": "zh-CN"
+  },
+  "chapters": [
+    {
+      "id": "ch_electrostatics",
+      "title": "静电场",
+      "parent_id": null,
+      "order": 0
+    },
+    {
+      "id": "ch_electric_field",
+      "title": "电场与高斯定理",
+      "parent_id": "ch_electrostatics",
+      "order": 0
+    },
+    {
+      "id": "ch_steady_magnetic_field",
+      "title": "恒定磁场",
+      "parent_id": null,
+      "order": 1
+    },
+    {
+      "id": "ch_electromagnetic_induction",
+      "title": "电磁感应与麦克斯韦方程组",
+      "parent_id": null,
+      "order": 2
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_textbook_em",
+      "title": "《电磁学（第四版）》",
+      "edition": "第4版，高等教育出版社，2021",
+      "source_type": "pdf",
+      "uri": "asset://course-library/em-textbook-4e",
+      "sha256": "6f1d2b3c4e5a60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f9"
+    },
+    {
+      "id": "src_lecture_notes",
+      "title": "课程讲义《静电场与恒定磁场》",
+      "edition": "2026 春季修订",
+      "source_type": "markdown",
+      "uri": "asset://course-library/em-lecture-2026s",
+      "sha256": "0b7c9d1e3f5a728496b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f60718293a4b5c"
+    },
+    {
+      "id": "src_web_reference",
+      "title": "MIT OCW 8.02 电磁学公开课",
+      "edition": "2024 版课程页面",
+      "source_type": "web",
+      "uri": "https://ocw.example.edu/courses/8-02-electromagnetism/",
+      "sha256": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_textbook_field",
+      "source_id": "src_textbook_em",
+      "locator": {
+        "section": "2.1",
+        "page_start": 41,
+        "page_end": 43,
+        "anchor": "电场强度"
+      },
+      "quote": "电场强度是描述电场力的性质的物理量，定义为置于该点的试探电荷所受电场力与其电荷量之比。",
+      "rag_ref": {
+        "file_id": "rag_file_8f3c2a17",
+        "parent_id": "rag_doc_em_textbook_4e"
+      }
+    },
+    {
+      "id": "ev_textbook_gauss",
+      "source_id": "src_textbook_em",
+      "locator": {
+        "section": "3.2",
+        "page_start": 78,
+        "page_end": 80,
+        "anchor": "高斯定理"
+      },
+      "quote": "通过任意闭合曲面的电通量，等于该曲面所包围的所有电荷的代数和除以真空介电常数。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_lecture_flux",
+      "source_id": "src_lecture_notes",
+      "locator": {
+        "section": "第2讲 电通量",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "flux-definition"
+      },
+      "quote": "电通量是电场强度对某一有向面积的积分，用于描述电场穿过曲面的总体情况。",
+      "rag_ref": {
+        "file_id": "rag_file_2d91bf40",
+        "parent_id": "rag_doc_em_lecture_2026s"
+      }
+    },
+    {
+      "id": "ev_textbook_potential",
+      "source_id": "src_textbook_em",
+      "locator": {
+        "section": "2.5",
+        "page_start": 55,
+        "page_end": 57,
+        "anchor": "电势"
+      },
+      "quote": "静电场中某点的电势，等于把单位正电荷从该点沿任意路径移动到电势零点时静电力所做的功。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_lecture_shielding",
+      "source_id": "src_lecture_notes",
+      "locator": {
+        "section": "第6讲 导体与静电平衡",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "electrostatic-shielding"
+      },
+      "quote": "处于静电平衡的导体内部电场为零，外部电场不能穿透导体空腔，这一现象称为静电屏蔽。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_web_faraday",
+      "source_id": "src_web_reference",
+      "locator": {
+        "section": null,
+        "page_start": null,
+        "page_end": null,
+        "anchor": "faraday-law"
+      },
+      "quote": "Faraday's law states that the induced electromotive force in a loop equals the negative time rate of change of the magnetic flux through the loop.",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_textbook_ampere",
+      "source_id": "src_textbook_em",
+      "locator": {
+        "section": "5.1",
+        "page_start": 132,
+        "page_end": 135,
+        "anchor": "安培环路定理"
+      },
+      "quote": "磁感应强度沿任意闭合路径的线积分，等于该路径所包围的电流的代数和乘以真空磁导率。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_textbook_maxwell",
+      "source_id": "src_textbook_em",
+      "locator": {
+        "section": "8.1",
+        "page_start": 210,
+        "page_end": 214,
+        "anchor": "麦克斯韦方程组"
+      },
+      "quote": "麦克斯韦方程组由高斯定律、高斯磁定律、法拉第电磁感应定律和安培-麦克斯韦定律四个方程组成，是经典电磁理论的统一表述。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_lecture_gauss_proof",
+      "source_id": "src_lecture_notes",
+      "locator": {
+        "section": "第3讲 高斯定理",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "gauss-law-proof"
+      },
+      "quote": "高斯定理可由库仑定律和场强叠加原理证明，其成立不依赖于高斯面形状，只与面内净电荷有关。",
+      "rag_ref": {
+        "file_id": "rag_file_5a07ce93",
+        "parent_id": "rag_doc_em_lecture_2026s"
+      }
+    },
+    {
+      "id": "ev_textbook_sphere",
+      "source_id": "src_textbook_em",
+      "locator": {
+        "section": "3.3",
+        "page_start": 81,
+        "page_end": 84,
+        "anchor": "均匀带电球面"
+      },
+      "quote": "均匀带电球面内部的电场处处为零，外部任意一点的电场等效于全部电荷集中于球心的点电荷产生的电场。",
+      "rag_ref": null
+    }
+  ],
+  "nodes": [
+    {
+      "id": "electric_field",
+      "name": "电场强度",
+      "type": "concept",
+      "description": "描述静电场对电荷作用力的矢量物理量，某点场强等于单位正电荷在该点所受的电场力。",
+      "chapter": "ch_electric_field",
+      "aliases": ["电场", "电场强度矢量"],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": ["ev_textbook_field", "ev_lecture_flux"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_lin",
+        "reviewed_at": "2026-10-12T03:20:00Z",
+        "note": "对照教材第 2.1 节核对定义表述。"
+      },
+      "extensions": {}
+    },
+    {
+      "id": "electric_flux",
+      "name": "电通量",
+      "type": "concept",
+      "description": "电场强度对某一有向曲面的面积分，表征电场线穿过该曲面的净条数。",
+      "chapter": "ch_electric_field",
+      "aliases": ["E 通量"],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": ["ev_lecture_flux", "ev_textbook_gauss"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_lin",
+        "reviewed_at": "2026-10-12T03:35:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "gauss_law",
+      "name": "高斯定理",
+      "type": "law",
+      "description": "静电场中通过任意闭合曲面的电通量，等于该曲面所包围的净电荷量除以真空介电常数。",
+      "chapter": "ch_electric_field",
+      "aliases": ["高斯定律"],
+      "formula_latex": null,
+      "conditions": ["静电场", "真空或线性均匀各向同性电介质"],
+      "evidence_ids": ["ev_textbook_gauss", "ev_lecture_gauss_proof"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_lin",
+        "reviewed_at": "2026-10-12T04:00:00Z",
+        "note": null
+      },
+      "extensions": {
+        "team.difficulty": 3
+      }
+    },
+    {
+      "id": "gauss_law_integral",
+      "name": "高斯定理积分形式",
+      "type": "formula",
+      "description": "高斯定理的积分表达式，把闭合曲面上的电通量与面内净电荷直接联系起来。",
+      "chapter": "ch_electric_field",
+      "aliases": ["高斯定理公式"],
+      "formula_latex": "\\oint_{S} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = \\frac{Q_{\\mathrm{enc}}}{\\varepsilon_0}",
+      "conditions": ["静电场", "S 为闭合曲面", "Q_enc 为 S 所包围的净电荷"],
+      "evidence_ids": ["ev_textbook_gauss"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_lin",
+        "reviewed_at": "2026-10-12T04:10:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "gauss_surface_method",
+      "name": "高斯面法",
+      "type": "method",
+      "description": "利用高斯定理求解具有对称性的电荷分布所产生的电场的方法，关键在于选取使场强大小恒定且方向与面元平行的高斯面。",
+      "chapter": "ch_electric_field",
+      "aliases": ["高斯面选取法"],
+      "formula_latex": null,
+      "conditions": ["电荷分布具有球对称、轴对称或面对称性"],
+      "evidence_ids": ["ev_textbook_gauss", "ev_lecture_gauss_proof"],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "electric_potential",
+      "name": "电势",
+      "type": "concept",
+      "description": "描述静电场能的性质的标量物理量，等于单位正电荷从该点移动到电势零点过程中静电力所做的功。",
+      "chapter": "ch_electric_field",
+      "aliases": ["电位"],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": ["ev_textbook_potential"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_zhou",
+        "reviewed_at": "2026-10-13T02:15:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "electrostatic_shielding",
+      "name": "静电屏蔽",
+      "type": "phenomenon",
+      "description": "静电平衡状态下导体内部电场为零，从而使其空腔内部不受外电场影响的现象。",
+      "chapter": "ch_electric_field",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": ["ev_lecture_shielding"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_zhou",
+        "reviewed_at": "2026-10-13T02:40:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "charged_sphere_field",
+      "name": "均匀带电球面的电场",
+      "type": "application",
+      "description": "球面对称电荷分布的典型问题：球面内部场强为零，外部场强等效于电荷集中于球心的点电荷。",
+      "chapter": "ch_electric_field",
+      "aliases": ["带电球面场分布"],
+      "formula_latex": null,
+      "conditions": ["电荷在球面上均匀分布"],
+      "evidence_ids": ["ev_textbook_sphere"],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "magnetic_flux",
+      "name": "磁通量",
+      "type": "concept",
+      "description": "磁感应强度对某一有向曲面的面积分，表征穿过该曲面的磁感线净条数。",
+      "chapter": "ch_steady_magnetic_field",
+      "aliases": ["磁通"],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": ["ev_web_faraday", "ev_textbook_ampere"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_zhou",
+        "reviewed_at": "2026-10-13T06:05:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "ampere_circuital_law",
+      "name": "安培环路定理",
+      "type": "law",
+      "description": "恒定磁场中磁感应强度沿任意闭合路径的线积分，等于该路径所包围电流的代数和乘以真空磁导率。",
+      "chapter": "ch_steady_magnetic_field",
+      "aliases": ["安培环路定律"],
+      "formula_latex": null,
+      "conditions": ["恒定电流", "真空或线性均匀磁介质"],
+      "evidence_ids": ["ev_textbook_ampere"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_zhou",
+        "reviewed_at": "2026-10-13T06:30:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "faraday_law",
+      "name": "法拉第电磁感应定律",
+      "type": "law",
+      "description": "闭合回路中感应电动势的大小等于穿过该回路的磁通量随时间变化率的负值。",
+      "chapter": "ch_electromagnetic_induction",
+      "aliases": ["法拉第定律"],
+      "formula_latex": null,
+      "conditions": ["回路闭合或存在可累积电荷的导体"],
+      "evidence_ids": ["ev_web_faraday"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_lin",
+        "reviewed_at": "2026-10-14T01:10:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "maxwell_equations",
+      "name": "麦克斯韦方程组",
+      "type": "law",
+      "description": "统一描述电场与磁场产生及相互转化的四个基本方程，是经典电磁学的理论核心。",
+      "chapter": "ch_electromagnetic_induction",
+      "aliases": ["麦克斯韦方程"],
+      "formula_latex": null,
+      "conditions": ["真空或连续介质", "宏观尺度"],
+      "evidence_ids": ["ev_textbook_maxwell"],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_field_to_flux",
+      "source": "electric_field",
+      "target": "electric_flux",
+      "relation": "prerequisite",
+      "description": "先掌握电场强度的定义，才能把通量理解为场强对面积分。",
+      "evidence_ids": ["ev_lecture_flux"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_lin",
+        "reviewed_at": "2026-10-12T05:00:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_flux_to_gauss",
+      "source": "electric_flux",
+      "target": "gauss_law",
+      "relation": "prerequisite",
+      "description": "高斯定理以电通量为陈述对象，先修通量概念。",
+      "evidence_ids": ["ev_textbook_gauss"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_lin",
+        "reviewed_at": "2026-10-12T05:10:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_gauss_to_integral",
+      "source": "gauss_law",
+      "target": "gauss_law_integral",
+      "relation": "derives",
+      "description": "积分形式是高斯定理的数学表达。",
+      "evidence_ids": ["ev_textbook_gauss"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_lin",
+        "reviewed_at": "2026-10-12T05:20:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_gauss_to_method",
+      "source": "gauss_law",
+      "target": "gauss_surface_method",
+      "relation": "prerequisite",
+      "description": "高斯面法直接以高斯定理为依据，属于其应用方法。",
+      "evidence_ids": ["ev_lecture_gauss_proof"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_lin",
+        "reviewed_at": "2026-10-12T05:30:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_method_to_sphere",
+      "source": "gauss_surface_method",
+      "target": "charged_sphere_field",
+      "relation": "prerequisite",
+      "description": "求解均匀带电球面电场需要先掌握高斯面法。",
+      "evidence_ids": ["ev_textbook_sphere"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_zhou",
+        "reviewed_at": "2026-10-13T03:00:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_field_to_potential",
+      "source": "electric_field",
+      "target": "electric_potential",
+      "relation": "prerequisite",
+      "description": "电势由电场力做功定义，需先理解电场强度。",
+      "evidence_ids": ["ev_textbook_potential"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_zhou",
+        "reviewed_at": "2026-10-13T03:20:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_flux_magnetic",
+      "source": "electric_flux",
+      "target": "magnetic_flux",
+      "relation": "related_to",
+      "description": "电通量与磁通量在定义形式上同构，可类比学习。",
+      "evidence_ids": ["ev_lecture_flux", "ev_web_faraday"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_zhou",
+        "reviewed_at": "2026-10-13T06:45:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_field_shielding",
+      "source": "electric_field",
+      "target": "electrostatic_shielding",
+      "relation": "related_to",
+      "description": "静电屏蔽是导体内部场强为零的直接结果。",
+      "evidence_ids": ["ev_lecture_shielding"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_zhou",
+        "reviewed_at": "2026-10-13T03:40:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_magnetic_to_faraday",
+      "source": "magnetic_flux",
+      "target": "faraday_law",
+      "relation": "prerequisite",
+      "description": "法拉第定律以磁通量变化率为核心量，需先修磁通量。",
+      "evidence_ids": ["ev_web_faraday"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_lin",
+        "reviewed_at": "2026-10-14T01:30:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_ampere_to_maxwell",
+      "source": "ampere_circuital_law",
+      "target": "maxwell_equations",
+      "relation": "prerequisite",
+      "description": "安培环路定理是麦克斯韦方程组中安培-麦克斯韦方程的来源之一。",
+      "evidence_ids": ["ev_textbook_maxwell"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_lin",
+        "reviewed_at": "2026-10-14T02:00:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_faraday_to_maxwell",
+      "source": "faraday_law",
+      "target": "maxwell_equations",
+      "relation": "prerequisite",
+      "description": "理解法拉第定律是掌握麦克斯韦方程组的前提。",
+      "evidence_ids": ["ev_textbook_maxwell"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_lin",
+        "reviewed_at": "2026-10-14T02:10:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_ampere_gauss",
+      "source": "ampere_circuital_law",
+      "target": "gauss_law",
+      "relation": "related_to",
+      "description": "安培环路定理与高斯定理分别是磁场和电场的通量/环流形式，可对照学习。",
+      "evidence_ids": ["ev_textbook_ampere", "ev_textbook_gauss"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_lin",
+        "reviewed_at": "2026-10-14T02:30:00Z",
+        "note": null
+      },
+      "extensions": {}
+    }
+  ],
+  "item_mappings": [
+    {
+      "item_id": "item_em_2025_final_q3",
+      "skill_ids": ["gauss_law", "gauss_surface_method"],
+      "confidence": 0.86,
+      "evidence_ids": ["ev_textbook_sphere"],
+      "review": {
+        "status": "approved",
+        "reviewer_id": "reviewer_zhou",
+        "reviewed_at": "2026-10-14T03:00:00Z",
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "item_id": "item_em_2025_final_q8",
+      "skill_ids": ["faraday_law"],
+      "confidence": null,
+      "evidence_ids": ["ev_web_faraday"],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    }
+  ],
+  "redirects": {
+    "gauss_theorem": "gauss_law"
+  },
+  "extensions": {
+    "team.source_pipeline": "manual-curation-v0"
+  }
+}
