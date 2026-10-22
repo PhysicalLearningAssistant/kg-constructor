@@ -1,4 +1,5 @@
 .deps/
+.deps-wheels/
 .tmp/
 __pycache__/
 *.pyc

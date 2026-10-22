@@ -1,0 +1,1937 @@
+{
+  "schema_version": "1.0.0",
+  "graph_id": "electromagnetism_university",
+  "version": "0.1.0",
+  "status": "draft",
+  "created_at": "2026-10-22T17:00:31Z",
+  "course": {
+    "id": "university_electromagnetism",
+    "name": "大学电磁学",
+    "language": "zh-CN"
+  },
+  "chapters": [
+    {
+      "id": "ch_electrostatics",
+      "title": "静电场",
+      "parent_id": null,
+      "order": 0
+    },
+    {
+      "id": "ch_electrostatics_s1",
+      "title": "1.1 电荷与库仑定律",
+      "parent_id": "ch_electrostatics",
+      "order": 0
+    },
+    {
+      "id": "ch_electrostatics_s2",
+      "title": "1.2 电场强度",
+      "parent_id": "ch_electrostatics",
+      "order": 1
+    },
+    {
+      "id": "ch_electrostatics_s3",
+      "title": "1.3 电通量",
+      "parent_id": "ch_electrostatics",
+      "order": 2
+    },
+    {
+      "id": "ch_electrostatics_s4",
+      "title": "1.4 高斯定理",
+      "parent_id": "ch_electrostatics",
+      "order": 3
+    },
+    {
+      "id": "ch_electrostatics_s5",
+      "title": "1.5 高斯面法",
+      "parent_id": "ch_electrostatics",
+      "order": 4
+    },
+    {
+      "id": "ch_electrostatics_s6",
+      "title": "1.6 典型应用",
+      "parent_id": "ch_electrostatics",
+      "order": 5
+    },
+    {
+      "id": "ch_electrostatics_s7",
+      "title": "1.7 静电屏蔽",
+      "parent_id": "ch_electrostatics",
+      "order": 6
+    },
+    {
+      "id": "ch_steady_magnetic_field",
+      "title": "恒定磁场",
+      "parent_id": null,
+      "order": 1
+    },
+    {
+      "id": "ch_steady_magnetic_field_s1",
+      "title": "2.1 磁感应强度",
+      "parent_id": "ch_steady_magnetic_field",
+      "order": 0
+    },
+    {
+      "id": "ch_steady_magnetic_field_s2",
+      "title": "2.2 磁通量",
+      "parent_id": "ch_steady_magnetic_field",
+      "order": 1
+    },
+    {
+      "id": "ch_steady_magnetic_field_s3",
+      "title": "2.3 安培环路定理",
+      "parent_id": "ch_steady_magnetic_field",
+      "order": 2
+    },
+    {
+      "id": "ch_electromagnetic_induction",
+      "title": "电磁感应",
+      "parent_id": null,
+      "order": 2
+    },
+    {
+      "id": "ch_electromagnetic_induction_s1",
+      "title": "3.1 法拉第电磁感应定律",
+      "parent_id": "ch_electromagnetic_induction",
+      "order": 0
+    },
+    {
+      "id": "ch_electromagnetic_induction_s2",
+      "title": "3.2 麦克斯韦方程组",
+      "parent_id": "ch_electromagnetic_induction",
+      "order": 1
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_textbook",
+      "title": "sample_electromagnetism",
+      "edition": "未注明",
+      "source_type": "markdown",
+      "uri": "asset://kg-constructor/sample_electromagnetism.md",
+      "sha256": "0c2e27fecb491fb35489639233cf1b26f9ff79ee7bcf732d6886f36aad9b7d10"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_0001",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.1 电荷与库仑定律",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_001_kp_001"
+      },
+      "quote": "库仑定律指出，真空中两个静止点电荷之间的相互作用力与它们电荷量的乘积成正比，与它们距离的平方成反比。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0002",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.1 电荷与库仑定律",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_001_kp_002"
+      },
+      "quote": "$$F = k \\frac{q_1 q_2}{r^2}$$",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0003",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.1 电荷与库仑定律",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_001_kp_003"
+      },
+      "quote": "电荷是物体的一种基本属性，同种电荷相互排斥，异种电荷相互吸引。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0004",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.1 电荷与库仑定律",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_001_kp_004"
+      },
+      "quote": "点电荷是理想化的带电体模型，当带电体的形状和大小对研究问题的影响可以忽略时，可以把它看作点电荷。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0005",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.1 电荷与库仑定律",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_001_kp_005"
+      },
+      "quote": "库仑定律指出，真空中两个静止点电荷之间的相互作用力与它们电荷量的乘积成正比，与它们距离的平方成反比。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0006",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.2 电场强度",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_002_kp_006"
+      },
+      "quote": "$$E = \\frac{F}{q}$$",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0007",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.2 电场强度",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_002_kp_007"
+      },
+      "quote": "电场强度定义为置于电场中某点的试探电荷所受电场力与其电荷量之比，即\n\n \n\n电场强度是矢量，方向与正电荷在该点所受电场力的方向相同。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0008",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.2 电场强度",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_002_kp_008"
+      },
+      "quote": "电场强度定义为置于电场中某点的试探电荷所受电场力与其电荷量之比，即\n\n \n\n电场强度是矢量，方向与正电荷在该点所受电场力的方向相同。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0009",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.2 电场强度",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_002_kp_009"
+      },
+      "quote": "电场强度定义为置于电场中某点的试探电荷所受电场力与其电荷量之比，即\n\n \n\n电场强度是矢量，方向与正电荷在该点所受电场力的方向相同。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0010",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.2 电场强度",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_002_kp_010"
+      },
+      "quote": "电场线是为了直观描述电场而引入的假想曲线，电场线的疏密表示电场强度的大小。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0011",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.3 电通量",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_003_kp_011"
+      },
+      "quote": "$$\\Phi_E = E S \\cos\\theta$$",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0012",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.3 电通量",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_003_kp_012"
+      },
+      "quote": "电通量定义为电场强度对某一有向曲面的面积分。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0013",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.4 高斯定理",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_004_kp_013"
+      },
+      "quote": "高斯定理指出，通过任意闭合曲面的电通量，等于该曲面所包围的净电荷量除以真空介电常数。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0014",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.4 高斯定理",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_004_kp_014"
+      },
+      "quote": "$$\\oint_S \\mathbf{E} \\cdot d\\mathbf{S} = \\frac{Q_{\\mathrm{enc}}}{\\varepsilon_0}$$",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0015",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.5 高斯面法",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_005_kp_015"
+      },
+      "quote": "高斯面法是一种利用高斯定理求解对称电场分布的解题方法。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0016",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.5 高斯面法",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_005_kp_016"
+      },
+      "quote": "高斯面法是一种利用高斯定理求解对称电场分布的解题方法。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0017",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.6 典型应用",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_006_kp_017"
+      },
+      "quote": "均匀带电球面的电场具有球对称性。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0018",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.6 典型应用",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_006_kp_018"
+      },
+      "quote": "无限长带电直线的电场具有柱对称性，无限大带电平面的电场具有平面对称性。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0019",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.6 典型应用",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_006_kp_019"
+      },
+      "quote": "无限长带电直线的电场具有柱对称性，无限大带电平面的电场具有平面对称性。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0020",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "静电场 / 1.7 静电屏蔽",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_007_kp_020"
+      },
+      "quote": "处于静电平衡的导体内部电场为零，外部电场不能穿透导体空腔，这种现象称为静电屏蔽。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0021",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "恒定磁场 / 2.1 磁感应强度",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_008_kp_021"
+      },
+      "quote": "磁感应强度是描述磁场对运动电荷作用力的矢量物理量，常用符号 B 表示。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0022",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "恒定磁场 / 2.1 磁感应强度",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_008_kp_022"
+      },
+      "quote": "磁场对运动电荷的作用力称为洛伦兹力。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0023",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "恒定磁场 / 2.2 磁通量",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_009_kp_023"
+      },
+      "quote": "$$\\Phi_B = \\int_S \\mathbf{B} \\cdot d\\mathbf{S}$$",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0024",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "恒定磁场 / 2.2 磁通量",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_009_kp_024"
+      },
+      "quote": "磁通量定义为磁感应强度对某一有向曲面的面积分，其数学表达式为\n\n \n\n磁通量是标量，单位为韦伯。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0025",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "恒定磁场 / 2.3 安培环路定理",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_010_kp_025"
+      },
+      "quote": "安培环路定理指出，磁感应强度沿任意闭合路径的线积分，等于该路径所包围的电流的代数和乘以真空磁导率。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0026",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "恒定磁场 / 2.3 安培环路定理",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_010_kp_026"
+      },
+      "quote": "$$\\oint_L \\mathbf{B} \\cdot d\\mathbf{l} = \\mu_0 I_{\\mathrm{enc}}$$",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0027",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "电磁感应 / 3.1 法拉第电磁感应定律",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_011_kp_027"
+      },
+      "quote": "法拉第电磁感应定律指出，闭合回路中感应电动势的大小，等于穿过该回路的磁通量随时间变化率的负值。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0028",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "电磁感应 / 3.1 法拉第电磁感应定律",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_011_kp_028"
+      },
+      "quote": "法拉第电磁感应定律的数学表达式为\n\n \n\n感应电动势的方向可以由楞次定律判断。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0029",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "电磁感应 / 3.1 法拉第电磁感应定律",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_011_kp_029"
+      },
+      "quote": "$$\\mathcal{E} = -\\frac{d\\Phi_B}{dt}$$",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0030",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "电磁感应 / 3.1 法拉第电磁感应定律",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_011_kp_030"
+      },
+      "quote": "法拉第电磁感应定律指出，闭合回路中感应电动势的大小，等于穿过该回路的磁通量随时间变化率的负值。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0031",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "电磁感应 / 3.2 麦克斯韦方程组",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_012_kp_031"
+      },
+      "quote": "麦克斯韦方程组由高斯定律、高斯磁定律、法拉第电磁感应定律和安培-麦克斯韦定律组成，是经典电磁理论的统一表述。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0032",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "电磁感应 / 3.2 麦克斯韦方程组",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_012_kp_032"
+      },
+      "quote": "麦克斯韦方程组由高斯定律、高斯磁定律、法拉第电磁感应定律和安培-麦克斯韦定律组成，是经典电磁理论的统一表述。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0033",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "电磁感应 / 3.2 麦克斯韦方程组",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_012_kp_033"
+      },
+      "quote": "麦克斯韦方程组由高斯定律、高斯磁定律、法拉第电磁感应定律和安培-麦克斯韦定律组成，是经典电磁理论的统一表述。",
+      "rag_ref": null
+    },
+    {
+      "id": "ev_0034",
+      "source_id": "src_textbook",
+      "locator": {
+        "section": "电磁感应 / 3.2 麦克斯韦方程组",
+        "page_start": null,
+        "page_end": null,
+        "anchor": "sec_012_kp_034"
+      },
+      "quote": "麦克斯韦方程组预言了电磁波的存在。",
+      "rag_ref": null
+    }
+  ],
+  "nodes": [
+    {
+      "id": "coulomb_law",
+      "name": "库仑定律",
+      "type": "law",
+      "description": "库仑定律指出，真空中两个静止点电荷之间的相互作用力与它们电荷量的乘积成正比，与它们距离的平方成反比。",
+      "chapter": "ch_electrostatics_s1",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0001"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "kp_b817c03e",
+      "name": "库仑定律公式",
+      "type": "formula",
+      "description": "库仑定律公式的数学表达式。",
+      "chapter": "ch_electrostatics_s1",
+      "aliases": [],
+      "formula_latex": "F = k \\frac{q_1 q_2}{r^2}",
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0002"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "electric_charge",
+      "name": "电荷",
+      "type": "concept",
+      "description": "电荷是物体的一种基本属性，同种电荷相互排斥，异种电荷相互吸引。",
+      "chapter": "ch_electrostatics_s1",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0003"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "point_charge",
+      "name": "点电荷",
+      "type": "concept",
+      "description": "点电荷是理想化的带电体模型，当带电体的形状和大小对研究问题的影响可以忽略时，可以把它看作点电荷。",
+      "chapter": "ch_electrostatics_s1",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0004"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "charge_quantity",
+      "name": "电荷量",
+      "type": "concept",
+      "description": "库仑定律指出，真空中两个静止点电荷之间的相互作用力与它们电荷量的乘积成正比，与它们距离的平方成反比。",
+      "chapter": "ch_electrostatics_s1",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0005"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "kp_d2d667d5",
+      "name": "电场强度公式",
+      "type": "formula",
+      "description": "电场强度公式的数学表达式。",
+      "chapter": "ch_electrostatics_s2",
+      "aliases": [],
+      "formula_latex": "E = \\frac{F}{q}",
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0006"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "electric_field",
+      "name": "电场强度",
+      "type": "concept",
+      "description": "电场强度定义为置于电场中某点的试探电荷所受电场力与其电荷量之比，即\n\n \n\n电场强度是矢量，方向与正电荷在该点所受电场力的方向相同。",
+      "chapter": "ch_electrostatics_s2",
+      "aliases": [
+        "电场"
+      ],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0007"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "test_charge",
+      "name": "试探电荷",
+      "type": "concept",
+      "description": "电场强度定义为置于电场中某点的试探电荷所受电场力与其电荷量之比，即\n\n \n\n电场强度是矢量，方向与正电荷在该点所受电场力的方向相同。",
+      "chapter": "ch_electrostatics_s2",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0008"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "electric_force",
+      "name": "电场力",
+      "type": "concept",
+      "description": "电场强度定义为置于电场中某点的试探电荷所受电场力与其电荷量之比，即\n\n \n\n电场强度是矢量，方向与正电荷在该点所受电场力的方向相同。",
+      "chapter": "ch_electrostatics_s2",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0009"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "electric_field_line",
+      "name": "电场线",
+      "type": "concept",
+      "description": "电场线是为了直观描述电场而引入的假想曲线，电场线的疏密表示电场强度的大小。",
+      "chapter": "ch_electrostatics_s2",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0010"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "kp_c3d2a4bd",
+      "name": "电通量公式",
+      "type": "formula",
+      "description": "电通量公式的数学表达式。",
+      "chapter": "ch_electrostatics_s3",
+      "aliases": [],
+      "formula_latex": "\\Phi_E = E S \\cos\\theta",
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0011"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "electric_flux",
+      "name": "电通量",
+      "type": "concept",
+      "description": "电通量定义为电场强度对某一有向曲面的面积分。",
+      "chapter": "ch_electrostatics_s3",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0012"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "gauss_law",
+      "name": "高斯定理",
+      "type": "law",
+      "description": "高斯定理指出，通过任意闭合曲面的电通量，等于该曲面所包围的净电荷量除以真空介电常数。",
+      "chapter": "ch_electrostatics_s4",
+      "aliases": [
+        "高斯定律"
+      ],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0013"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "kp_aa6a9df3",
+      "name": "高斯定理公式",
+      "type": "formula",
+      "description": "高斯定理公式的数学表达式。",
+      "chapter": "ch_electrostatics_s4",
+      "aliases": [],
+      "formula_latex": "\\oint_S \\mathbf{E} \\cdot d\\mathbf{S} = \\frac{Q_{\\mathrm{enc}}}{\\varepsilon_0}",
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0014"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "gauss_surface_method",
+      "name": "高斯面法",
+      "type": "method",
+      "description": "高斯面法是一种利用高斯定理求解对称电场分布的解题方法。",
+      "chapter": "ch_electrostatics_s5",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0015"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "gaussian_surface",
+      "name": "高斯面",
+      "type": "concept",
+      "description": "高斯面法是一种利用高斯定理求解对称电场分布的解题方法。",
+      "chapter": "ch_electrostatics_s5",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0016"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "uniform_sphere_field",
+      "name": "均匀带电球面的电场",
+      "type": "application",
+      "description": "均匀带电球面的电场具有球对称性。",
+      "chapter": "ch_electrostatics_s6",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0017"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "infinite_line_field",
+      "name": "无限长带电直线的电场",
+      "type": "application",
+      "description": "无限长带电直线的电场具有柱对称性，无限大带电平面的电场具有平面对称性。",
+      "chapter": "ch_electrostatics_s6",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0018"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "infinite_plane_field",
+      "name": "无限大带电平面的电场",
+      "type": "application",
+      "description": "无限长带电直线的电场具有柱对称性，无限大带电平面的电场具有平面对称性。",
+      "chapter": "ch_electrostatics_s6",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0019"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "electrostatic_shielding",
+      "name": "静电屏蔽",
+      "type": "concept",
+      "description": "处于静电平衡的导体内部电场为零，外部电场不能穿透导体空腔，这种现象称为静电屏蔽。",
+      "chapter": "ch_electrostatics_s7",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0020"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "magnetic_field",
+      "name": "磁感应强度",
+      "type": "concept",
+      "description": "磁感应强度是描述磁场对运动电荷作用力的矢量物理量，常用符号 B 表示。",
+      "chapter": "ch_steady_magnetic_field_s1",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0021"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "lorentz_force",
+      "name": "洛伦兹力",
+      "type": "concept",
+      "description": "磁场对运动电荷的作用力称为洛伦兹力。",
+      "chapter": "ch_steady_magnetic_field_s1",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0022"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "kp_d8d95251",
+      "name": "磁通量公式",
+      "type": "formula",
+      "description": "磁通量公式的数学表达式。",
+      "chapter": "ch_steady_magnetic_field_s2",
+      "aliases": [],
+      "formula_latex": "\\Phi_B = \\int_S \\mathbf{B} \\cdot d\\mathbf{S}",
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0023"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "magnetic_flux",
+      "name": "磁通量",
+      "type": "concept",
+      "description": "磁通量定义为磁感应强度对某一有向曲面的面积分，其数学表达式为\n\n \n\n磁通量是标量，单位为韦伯。",
+      "chapter": "ch_steady_magnetic_field_s2",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0024"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "ampere_law",
+      "name": "安培环路定理",
+      "type": "law",
+      "description": "安培环路定理指出，磁感应强度沿任意闭合路径的线积分，等于该路径所包围的电流的代数和乘以真空磁导率。",
+      "chapter": "ch_steady_magnetic_field_s3",
+      "aliases": [
+        "安培环路定律"
+      ],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0025"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "kp_ee2004a5",
+      "name": "安培环路定理公式",
+      "type": "formula",
+      "description": "安培环路定理公式的数学表达式。",
+      "chapter": "ch_steady_magnetic_field_s3",
+      "aliases": [],
+      "formula_latex": "\\oint_L \\mathbf{B} \\cdot d\\mathbf{l} = \\mu_0 I_{\\mathrm{enc}}",
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0026"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "faraday_law",
+      "name": "法拉第电磁感应定律",
+      "type": "law",
+      "description": "法拉第电磁感应定律指出，闭合回路中感应电动势的大小，等于穿过该回路的磁通量随时间变化率的负值。",
+      "chapter": "ch_electromagnetic_induction_s1",
+      "aliases": [
+        "法拉第定律"
+      ],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0027"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "lenz_law",
+      "name": "楞次定律",
+      "type": "law",
+      "description": "法拉第电磁感应定律的数学表达式为\n\n \n\n感应电动势的方向可以由楞次定律判断。",
+      "chapter": "ch_electromagnetic_induction_s1",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0028"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "kp_7c65aa80",
+      "name": "法拉第电磁感应定律公式",
+      "type": "formula",
+      "description": "法拉第电磁感应定律公式的数学表达式。",
+      "chapter": "ch_electromagnetic_induction_s1",
+      "aliases": [],
+      "formula_latex": "\\mathcal{E} = -\\frac{d\\Phi_B}{dt}",
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0029"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "electromotive_force",
+      "name": "电动势",
+      "type": "concept",
+      "description": "法拉第电磁感应定律指出，闭合回路中感应电动势的大小，等于穿过该回路的磁通量随时间变化率的负值。",
+      "chapter": "ch_electromagnetic_induction_s1",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0030"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "maxwell_equations",
+      "name": "麦克斯韦方程组",
+      "type": "law",
+      "description": "麦克斯韦方程组由高斯定律、高斯磁定律、法拉第电磁感应定律和安培-麦克斯韦定律组成，是经典电磁理论的统一表述。",
+      "chapter": "ch_electromagnetic_induction_s2",
+      "aliases": [
+        "麦克斯韦方程"
+      ],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0031"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "gauss_magnetic_law",
+      "name": "高斯磁定律",
+      "type": "law",
+      "description": "麦克斯韦方程组由高斯定律、高斯磁定律、法拉第电磁感应定律和安培-麦克斯韦定律组成，是经典电磁理论的统一表述。",
+      "chapter": "ch_electromagnetic_induction_s2",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0032"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "ampere_maxwell_law",
+      "name": "安培-麦克斯韦定律",
+      "type": "law",
+      "description": "麦克斯韦方程组由高斯定律、高斯磁定律、法拉第电磁感应定律和安培-麦克斯韦定律组成，是经典电磁理论的统一表述。",
+      "chapter": "ch_electromagnetic_induction_s2",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0033"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "electromagnetic_wave",
+      "name": "电磁波",
+      "type": "concept",
+      "description": "麦克斯韦方程组预言了电磁波的存在。",
+      "chapter": "ch_electromagnetic_induction_s2",
+      "aliases": [],
+      "formula_latex": null,
+      "conditions": [],
+      "evidence_ids": [
+        "ev_0034"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_0001",
+      "source": "charge_quantity",
+      "target": "coulomb_law",
+      "relation": "prerequisite",
+      "description": "电荷量是学习库仑定律的先修知识。",
+      "evidence_ids": [
+        "ev_0001"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0002",
+      "source": "electric_charge",
+      "target": "point_charge",
+      "relation": "prerequisite",
+      "description": "电荷是学习点电荷的先修知识。",
+      "evidence_ids": [
+        "ev_0004"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0003",
+      "source": "point_charge",
+      "target": "charge_quantity",
+      "relation": "prerequisite",
+      "description": "点电荷是学习电荷量的先修知识。",
+      "evidence_ids": [
+        "ev_0005"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0004",
+      "source": "test_charge",
+      "target": "electric_field",
+      "relation": "prerequisite",
+      "description": "试探电荷是学习电场强度的先修知识。",
+      "evidence_ids": [
+        "ev_0007"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0005",
+      "source": "electric_force",
+      "target": "test_charge",
+      "relation": "prerequisite",
+      "description": "电场力是学习试探电荷的先修知识。",
+      "evidence_ids": [
+        "ev_0008"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0006",
+      "source": "charge_quantity",
+      "target": "electric_force",
+      "relation": "prerequisite",
+      "description": "电荷量是学习电场力的先修知识。",
+      "evidence_ids": [
+        "ev_0009"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0007",
+      "source": "electric_field",
+      "target": "electric_field_line",
+      "relation": "prerequisite",
+      "description": "电场强度是学习电场线的先修知识。",
+      "evidence_ids": [
+        "ev_0010"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0008",
+      "source": "electric_field",
+      "target": "electric_flux",
+      "relation": "prerequisite",
+      "description": "电场强度是学习电通量的先修知识。",
+      "evidence_ids": [
+        "ev_0012"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0009",
+      "source": "electric_flux",
+      "target": "gauss_law",
+      "relation": "prerequisite",
+      "description": "电通量是学习高斯定理的先修知识。",
+      "evidence_ids": [
+        "ev_0013"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0010",
+      "source": "gaussian_surface",
+      "target": "gauss_surface_method",
+      "relation": "prerequisite",
+      "description": "高斯面是学习高斯面法的先修知识。",
+      "evidence_ids": [
+        "ev_0015"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0011",
+      "source": "gauss_law",
+      "target": "gaussian_surface",
+      "relation": "prerequisite",
+      "description": "高斯定理是学习高斯面的先修知识。",
+      "evidence_ids": [
+        "ev_0016"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0012",
+      "source": "infinite_plane_field",
+      "target": "infinite_line_field",
+      "relation": "prerequisite",
+      "description": "无限大带电平面的电场是学习无限长带电直线的电场的先修知识。",
+      "evidence_ids": [
+        "ev_0018"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0013",
+      "source": "electric_charge",
+      "target": "magnetic_field",
+      "relation": "prerequisite",
+      "description": "电荷是学习磁感应强度的先修知识。",
+      "evidence_ids": [
+        "ev_0021"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0014",
+      "source": "electric_charge",
+      "target": "lorentz_force",
+      "relation": "prerequisite",
+      "description": "电荷是学习洛伦兹力的先修知识。",
+      "evidence_ids": [
+        "ev_0022"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0015",
+      "source": "magnetic_field",
+      "target": "magnetic_flux",
+      "relation": "prerequisite",
+      "description": "磁感应强度是学习磁通量的先修知识。",
+      "evidence_ids": [
+        "ev_0024"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0016",
+      "source": "magnetic_field",
+      "target": "ampere_law",
+      "relation": "prerequisite",
+      "description": "磁感应强度是学习安培环路定理的先修知识。",
+      "evidence_ids": [
+        "ev_0025"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0017",
+      "source": "electromotive_force",
+      "target": "faraday_law",
+      "relation": "prerequisite",
+      "description": "电动势是学习法拉第电磁感应定律的先修知识。",
+      "evidence_ids": [
+        "ev_0027"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0018",
+      "source": "faraday_law",
+      "target": "lenz_law",
+      "relation": "prerequisite",
+      "description": "法拉第电磁感应定律是学习楞次定律的先修知识。",
+      "evidence_ids": [
+        "ev_0028"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0019",
+      "source": "magnetic_flux",
+      "target": "electromotive_force",
+      "relation": "prerequisite",
+      "description": "磁通量是学习电动势的先修知识。",
+      "evidence_ids": [
+        "ev_0030"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0020",
+      "source": "gauss_magnetic_law",
+      "target": "maxwell_equations",
+      "relation": "prerequisite",
+      "description": "高斯磁定律是学习麦克斯韦方程组的先修知识。",
+      "evidence_ids": [
+        "ev_0031"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0021",
+      "source": "ampere_maxwell_law",
+      "target": "gauss_magnetic_law",
+      "relation": "prerequisite",
+      "description": "安培-麦克斯韦定律是学习高斯磁定律的先修知识。",
+      "evidence_ids": [
+        "ev_0032"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0022",
+      "source": "faraday_law",
+      "target": "ampere_maxwell_law",
+      "relation": "prerequisite",
+      "description": "法拉第电磁感应定律是学习安培-麦克斯韦定律的先修知识。",
+      "evidence_ids": [
+        "ev_0033"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0023",
+      "source": "maxwell_equations",
+      "target": "electromagnetic_wave",
+      "relation": "prerequisite",
+      "description": "麦克斯韦方程组是学习电磁波的先修知识。",
+      "evidence_ids": [
+        "ev_0034"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0024",
+      "source": "coulomb_law",
+      "target": "kp_b817c03e",
+      "relation": "derives",
+      "description": "库仑定律公式由库仑定律导出。",
+      "evidence_ids": [
+        "ev_0002"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0025",
+      "source": "coulomb_law",
+      "target": "kp_d2d667d5",
+      "relation": "derives",
+      "description": "电场强度公式由库仑定律导出。",
+      "evidence_ids": [
+        "ev_0006"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0026",
+      "source": "coulomb_law",
+      "target": "kp_c3d2a4bd",
+      "relation": "derives",
+      "description": "电通量公式由库仑定律导出。",
+      "evidence_ids": [
+        "ev_0011"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0027",
+      "source": "gauss_law",
+      "target": "kp_aa6a9df3",
+      "relation": "derives",
+      "description": "高斯定理公式由高斯定理导出。",
+      "evidence_ids": [
+        "ev_0014"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0028",
+      "source": "gauss_law",
+      "target": "kp_d8d95251",
+      "relation": "derives",
+      "description": "磁通量公式由高斯定理导出。",
+      "evidence_ids": [
+        "ev_0023"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0029",
+      "source": "ampere_law",
+      "target": "kp_ee2004a5",
+      "relation": "derives",
+      "description": "安培环路定理公式由安培环路定理导出。",
+      "evidence_ids": [
+        "ev_0026"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0030",
+      "source": "faraday_law",
+      "target": "kp_7c65aa80",
+      "relation": "derives",
+      "description": "法拉第电磁感应定律公式由法拉第电磁感应定律导出。",
+      "evidence_ids": [
+        "ev_0029"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0031",
+      "source": "charge_quantity",
+      "target": "coulomb_law",
+      "relation": "related_to",
+      "description": "库仑定律与电荷量在教材同一句中共同出现。",
+      "evidence_ids": [
+        "ev_0005"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0032",
+      "source": "electric_field",
+      "target": "test_charge",
+      "relation": "related_to",
+      "description": "电场强度与试探电荷在教材同一句中共同出现。",
+      "evidence_ids": [
+        "ev_0008"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0033",
+      "source": "electric_field",
+      "target": "electric_force",
+      "relation": "related_to",
+      "description": "电场强度与电场力在教材同一句中共同出现。",
+      "evidence_ids": [
+        "ev_0009"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0034",
+      "source": "electric_force",
+      "target": "test_charge",
+      "relation": "related_to",
+      "description": "试探电荷与电场力在教材同一句中共同出现。",
+      "evidence_ids": [
+        "ev_0009"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0035",
+      "source": "gauss_surface_method",
+      "target": "gaussian_surface",
+      "relation": "related_to",
+      "description": "高斯面法与高斯面在教材同一句中共同出现。",
+      "evidence_ids": [
+        "ev_0016"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0036",
+      "source": "infinite_line_field",
+      "target": "infinite_plane_field",
+      "relation": "related_to",
+      "description": "无限长带电直线的电场与无限大带电平面的电场在教材同一句中共同出现。",
+      "evidence_ids": [
+        "ev_0019"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0037",
+      "source": "electromotive_force",
+      "target": "faraday_law",
+      "relation": "related_to",
+      "description": "法拉第电磁感应定律与电动势在教材同一句中共同出现。",
+      "evidence_ids": [
+        "ev_0030"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0038",
+      "source": "gauss_magnetic_law",
+      "target": "maxwell_equations",
+      "relation": "related_to",
+      "description": "麦克斯韦方程组与高斯磁定律在教材同一句中共同出现。",
+      "evidence_ids": [
+        "ev_0032"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0039",
+      "source": "ampere_maxwell_law",
+      "target": "maxwell_equations",
+      "relation": "related_to",
+      "description": "麦克斯韦方程组与安培-麦克斯韦定律在教材同一句中共同出现。",
+      "evidence_ids": [
+        "ev_0033"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0040",
+      "source": "ampere_maxwell_law",
+      "target": "gauss_magnetic_law",
+      "relation": "related_to",
+      "description": "高斯磁定律与安培-麦克斯韦定律在教材同一句中共同出现。",
+      "evidence_ids": [
+        "ev_0033"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0041",
+      "source": "infinite_line_field",
+      "target": "uniform_sphere_field",
+      "relation": "related_to",
+      "description": "均匀带电球面的电场与无限长带电直线的电场在教材中相邻出现。",
+      "evidence_ids": [
+        "ev_0018"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    },
+    {
+      "id": "edge_0042",
+      "source": "electrostatic_shielding",
+      "target": "uniform_sphere_field",
+      "relation": "related_to",
+      "description": "静电屏蔽与均匀带电球面的电场在教材中相邻出现。",
+      "evidence_ids": [
+        "ev_0017"
+      ],
+      "review": {
+        "status": "pending",
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "note": null
+      },
+      "extensions": {}
+    }
+  ],
+  "item_mappings": [],
+  "redirects": {},
+  "extensions": {
+    "kg.constructor": "heuristic-v0.1"
+  }
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>电磁学知识图谱 · 审核器</title>
+  <link rel="stylesheet" href="editor.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">KG</span>
+      <div>
+        <strong>电磁学知识图谱 · 审核器</strong>
+        <small>粗筛图谱 → 人工修正 → 导出 graph.json</small>
+      </div>
+    </div>
+
+    <label class="button file-button">
+      加载 graph.json
+      <input id="file-input" type="file" accept=".json,application/json" hidden />
+    </label>
+    <button id="export-btn" class="button primary" disabled>导出 JSON</button>
+    <button id="layout-btn" class="button" disabled>重新布局</button>
+
+    <div class="spacer"></div>
+
+    <input id="search-input" class="search" type="search" placeholder="搜索名称 / ID / 别名…" disabled />
+    <select id="chapter-filter" class="select" disabled>
+      <option value="">全部章节</option>
+    </select>
+    <div id="stats" class="stats">未加载</div>
+  </header>
+
+  <main class="workspace">
+    <section id="graph-wrap" class="graph-wrap">
+      <svg id="graph" xmlns="http://www.w3.org/2000/svg"></svg>
+
+      <div class="empty-hint" id="empty-hint">
+        <h2>还没有加载图谱</h2>
+        <p>点击左上角 <strong>“加载 graph.json”</strong>，选择构建器生成的初抽图谱。</p>
+        <p class="muted">也可以直接把 graph.json 拖进这个窗口。</p>
+      </div>
+
+      <div class="legend">
+        <span><i class="dot concept"></i>概念</span>
+        <span><i class="dot law"></i>定律</span>
+        <span><i class="dot formula"></i>公式</span>
+        <span><i class="dot method"></i>方法</span>
+        <span><i class="dot application"></i>应用</span>
+        <span><i class="dot phenomenon"></i>现象</span>
+      </div>
+
+      <div class="hint-bar">
+        拖动节点调整位置 · 滚轮缩放 · 拖空白处平移 · Ctrl+点击两个节点可合并
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <div id="panel" class="panel">
+        <div class="placeholder">
+          <h3>审核面板</h3>
+          <p>加载图谱后，点击节点或边开始审核。</p>
+          <ul>
+            <li>修改名称、类型、描述、章节</li>
+            <li>删除错误节点 / 边</li>
+            <li>合并同义节点</li>
+            <li>补充遗漏的节点 / 边</li>
+            <li>标记已审核并导出</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <button id="add-node-btn" class="button" disabled>新增节点</button>
+        <button id="add-edge-btn" class="button" disabled>新增边</button>
+        <button id="merge-btn" class="button" disabled>合并选中</button>
+        <button id="undo-btn" class="button" disabled>撤销</button>
+      </div>
+    </aside>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="editor.js"></script>
+</body>
+</html>
